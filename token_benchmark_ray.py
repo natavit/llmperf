@@ -330,7 +330,7 @@ def run_token_benchmark(
     )
 
     if results_dir:
-        filename = f"{model}_{mean_input_tokens}_{mean_output_tokens}"
+        filename = f"{model}_in-{mean_input_tokens}_{stddev_input_tokens}_out-{mean_output_tokens}_{stddev_output_tokens}_con-{num_concurrent_requests}_req-{max_num_completed_requests}"
         filename = re.sub(r"[^\w\d-]+", "-", filename)
         filename = re.sub(r"-{2,}", "-", filename)
         summary_filename = f"{filename}_summary"
